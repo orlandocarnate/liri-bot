@@ -1,6 +1,7 @@
 require("dotenv").config(); // imports dotenv
 var fs = require("fs"); // imports filesystem
 var axios = require("axios"); // Make XMLHttpRequests from the browser
+var moment = require("moment"); // time formatter
 var keys = require("./keys.js"); // imports keys.js files
 
 // var spotify = new Spotify(keys.spotify);
@@ -22,31 +23,65 @@ var nodeArgString;
 // get arguments from command line node liri.js <arguments>
 function processArgs(arg) {
     var tempArray = [];
-    nodeCommand = arg[2];
+    nodeCommand = arg[2].toLowerCase();
     for (var i = 3; i < arg.length; i++) {
         tempArray.push(arg[i]);
     }
-    nodeArgString = tempArray.join("+");
+    nodeArgString = tempArray.join(" ");
+    console.log("nodeArgString:", nodeArgString);
 
     switch (nodeCommand) {
+        case "concert-this":
+            getMyStuff.concertThis(nodeArgString);
+            break;
         case "movie-this":
             getMyStuff.movieThis(nodeArgString);
             break;
         default:
             console.log("Sorry, I don't know that command.");
             break;
-
-
-
     }
 
 }
 
 var getMyStuff = {
-    movieThis: function(queryString) {
-        axios.get("http://www.omdbapi.com/?t=" + queryString + "&y=&plot=short&apikey=trilogy").then(
-          function(response) {
-            // JSON response
+    concertThis: function (queryString) {
+        if (queryString === '') {
+            queryString = 'Rick Astley';
+        }
+        axios.get("https://rest.bandsintown.com/artists/" + queryString + "/events?app_id=codingbootcamp").then(
+            function (response) {
+                console.log(response.data.length);
+                var concertInfo = "Artist search: " + queryString + "\n";
+                for (var i = 0; i < response.data.length; i++) {
+                    // display JSON response
+                    concertInfo += "Venue: " + response.data[i].venue.name + "\n";
+                    concertInfo += "Location: " + response.data[i].venue.city + ", ";
+                    if (response.data[i].venue.region) {
+                        concertInfo += response.data[i].venue.region + ", ";
+                    }
+                    concertInfo += response.data[i].venue.country + "\n";
+                    var date = moment(response.data[i].datetime, moment.ISO_8601).format("MM/DD/YYYY");
+                    concertInfo += "Date of Event: " + date + "\n\n";
+                    console.log(concertInfo);
+                }
+
+                // add to log.txt
+                addToFile(nodeCommand + " " + queryString + ":\n" + concertInfo);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+    },
+movieThis: function (queryString) {
+    if (queryString === '') {
+        queryString = 'Mr Nobody';
+    }
+    axios.get("http://www.omdbapi.com/?t=" + queryString + "&y=&plot=short&apikey=trilogy").then(
+        function (response) {
+            console.log(response);
+            // display JSON response
             var movieInfo = "Title: " + response.data.Title + "\n";
             movieInfo += "Year: " + response.data.Year + "\n";
             movieInfo += "IMDB Rating: " + response.data.Ratings[0].Value + "\n";
@@ -55,15 +90,15 @@ var getMyStuff = {
             movieInfo += "Language: " + response.data.Language + "\n";
             movieInfo += "Plot: " + response.data.Plot + "\n";
             movieInfo += "Actors: " + response.data.Actors + "\n";
-        
+
             console.log(movieInfo);
-        
+
             // PUSH TO FILE
             addToFile(nodeCommand + ":\n" + movieInfo);
-          }
-        );
+        }
+    );
 
-    },
+},
 }
 // concert-this uses the Bands In Town Artist Events API
 // format: node liri.js concert-this <artist/band name here>
@@ -92,7 +127,7 @@ var getMyStuff = {
 // Make sure you append each command you run to the log.txt file.
 
 function addToFile(arg) {
-    fs.appendFile("log.txt", arg + "\n", function(err) {
+    fs.appendFile("log.txt", arg + "\n", function (err) {
         if (err) {
             return console.log(err);
         }
