@@ -5,6 +5,7 @@ LIRI is a Language Interpretation and Recognition Interface. LIRI will be a comm
 
 ### Spotify
 -[ ]
+* If there is more than 1 artist, then output plural "Artists", otherwise singular "Artist"
 
 ### Bands In Town
 -[ ]

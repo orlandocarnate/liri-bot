@@ -3,8 +3,9 @@ var fs = require("fs"); // imports filesystem
 var axios = require("axios"); // Make XMLHttpRequests from the browser
 var moment = require("moment"); // time formatter
 var keys = require("./keys.js"); // imports keys.js files
+var Spotify = require('node-spotify-api');
 
-// var spotify = new Spotify(keys.spotify);
+var spotify = new Spotify(keys.spotify);
 
 var nodeCommand;
 var nodeArgString;
@@ -34,6 +35,9 @@ function processArgs(arg) {
         case "concert-this":
             getMyStuff.concertThis(nodeArgString);
             break;
+        case "spotify-this-song":
+            getMyStuff.spotifyThis(nodeArgString);
+            break;
         case "movie-this":
             getMyStuff.movieThis(nodeArgString);
             break;
@@ -45,6 +49,8 @@ function processArgs(arg) {
 }
 
 var getMyStuff = {
+    // concert-this uses the Bands In Town Artist Events API
+    // format: node liri.js concert-this <artist/band name here>
     concertThis: function (queryString) {
         if (queryString === '') {
             queryString = 'Rick Astley';
@@ -74,50 +80,70 @@ var getMyStuff = {
             });
 
     },
-movieThis: function (queryString) {
-    if (queryString === '') {
-        queryString = 'Mr Nobody';
-    }
-    axios.get("http://www.omdbapi.com/?t=" + queryString + "&y=&plot=short&apikey=trilogy").then(
-        function (response) {
-            console.log(response);
-            // display JSON response
-            var movieInfo = "Title: " + response.data.Title + "\n";
-            movieInfo += "Year: " + response.data.Year + "\n";
-            movieInfo += "IMDB Rating: " + response.data.Ratings[0].Value + "\n";
-            movieInfo += "Rotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\n";
-            movieInfo += "Country: " + response.data.Country + "\n";
-            movieInfo += "Language: " + response.data.Language + "\n";
-            movieInfo += "Plot: " + response.data.Plot + "\n";
-            movieInfo += "Actors: " + response.data.Actors + "\n";
 
-            console.log(movieInfo);
+    // spotify-this-song
+    // format: node liri.js spotify-this-song '<song name here>'
+    spotifyThis: function (query) {
+        spotify.search({ type: 'track', query: query, limit: 5 }, function (err, data) {
+            if (err) {
+                return console.log('Error occurred: ' + err);
+            }
+            var songInfo = nodeCommand + " " + query + ":\n";
+            for (var i = 0; i < data.tracks.items.length; i++) {
+                var artistsArray = [];
+                // Artist or Artists logic
+                if (data.tracks.items[i].artists.length > 1) {
+                    songInfo += "Artists: "
+                } else {
+                    songInfo += "Artist: "
+                }
 
-            // PUSH TO FILE
-            addToFile(nodeCommand + ":\n" + movieInfo);
+                // concat multiple artists array
+                for (var j = 0; j < data.tracks.items[i].artists.length; j++) {
+                    artistsArray.push(data.tracks.items[i].artists[j].name);
+                }
+                songInfo += artistsArray.join(", ") + "\n";
+                songInfo += "Song Name: " + data.tracks.items[i].name + "\n";
+                songInfo += "Preview Link: " + data.tracks.items[i].name + "\n";
+                songInfo += "Album: " + data.tracks.items[i].album.name + "\n\n";
+                
+                
+                console.log(songInfo);
+            }
+            addToFile(songInfo);
+            
+        });
+    },
+    
+    // movie-this - use axios to retrieve data from OMDB API
+    // format: node liri.js movie-this '<movie name here>'
+    movieThis: function (queryString) {
+        if (queryString === '') {
+            queryString = 'Mr Nobody';
         }
-    );
+        axios.get("http://www.omdbapi.com/?t=" + queryString + "&y=&plot=short&apikey=trilogy").then(
+            function (response) {
+                console.log(response);
+                // display JSON response
+                var movieInfo = "Title: " + response.data.Title + "\n";
+                movieInfo += "Year: " + response.data.Year + "\n";
+                movieInfo += "IMDB Rating: " + response.data.Ratings[0].Value + "\n";
+                movieInfo += "Rotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\n";
+                movieInfo += "Country: " + response.data.Country + "\n";
+                movieInfo += "Language: " + response.data.Language + "\n";
+                movieInfo += "Plot: " + response.data.Plot + "\n";
+                movieInfo += "Actors: " + response.data.Actors + "\n";
 
-},
+                console.log(movieInfo);
+
+                // PUSH TO FILE
+                addToFile(nodeCommand + ":\n" + movieInfo);
+            }
+        );
+
+    },
 }
-// concert-this uses the Bands In Town Artist Events API
-// format: node liri.js concert-this <artist/band name here>
 
-// spotify-this-song
-// format: node liri.js spotify-this-song '<song name here>'
-
-// movie-this - use axios to retrieve data from OMDB API
-// format: node liri.js movie-this '<movie name here>'
-/*
-   * Title of the movie.
-   * Year the movie came out.
-   * IMDB Rating of the movie.
-   * Rotten Tomatoes Rating of the movie.
-   * Country where the movie was produced.
-   * Language of the movie.
-   * Plot of the movie.
-   * Actors in the movie.
-*/
 
 // do-what-it-says
 // format: node liri.js do-what-it-says
@@ -126,8 +152,10 @@ movieThis: function (queryString) {
 // window, output the data to a .txt file called log.txt.
 // Make sure you append each command you run to the log.txt file.
 
+// APPEND searches to log.txt
 function addToFile(arg) {
-    fs.appendFile("log.txt", arg + "\n", function (err) {
+    var appendText = "------------------------------\n" + arg;
+    fs.appendFile("log.txt", appendText + "\n", function (err) {
         if (err) {
             return console.log(err);
         }
