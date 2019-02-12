@@ -43,6 +43,9 @@ function processArgs(arg) {
         case "movie-this":
             getMyStuff.movieThis(nodeArgString);
             break;
+        case "do-what-it-says":
+            getMyStuff.doWhatItSays(nodeArgString);
+            break;
         default:
             console.log("Sorry, I don't know that command.");
             break;
@@ -59,7 +62,7 @@ var getMyStuff = {
         }
         axios.get("https://rest.bandsintown.com/artists/" + queryString + "/events?app_id=codingbootcamp&display-limit=5").then(
             function (response) {
-                var concertInfo = hRule + nodeCommand + " " + queryString  + "\n" + hRule;
+                var concertInfo = hRule + nodeCommand + " " + queryString + "\n" + hRule;
                 for (var i = 0; i < response.data.length; i++) {
                     // display JSON response
                     concertInfo += "Venue: " + response.data[i].venue.name + "\n";
@@ -110,15 +113,15 @@ var getMyStuff = {
                 songInfo += "Song Name: " + data.tracks.items[i].name + "\n";
                 songInfo += "Preview Link: " + data.tracks.items[i].preview_url + "\n";
                 songInfo += "Album: " + data.tracks.items[i].album.name + "\n\n";
-                
-                
+
+
                 console.log(songInfo);
             }
             addToFile(songInfo);
-            
+
         });
     },
-    
+
     // movie-this - use axios to retrieve data from OMDB API
     // format: node liri.js movie-this '<movie name here>'
     movieThis: function (queryString) {
@@ -129,7 +132,8 @@ var getMyStuff = {
             function (response) {
                 console.log(response);
                 // display JSON response
-                var movieInfo = "Title: " + response.data.Title + "\n";
+                var movieInfo = hRule + nodeCommand + " " + queryString + "\n" + hRule;
+                movieInfo += "Title: " + response.data.Title + "\n";
                 movieInfo += "Year: " + response.data.Year + "\n";
                 movieInfo += "IMDB Rating: " + response.data.Ratings[0].Value + "\n";
                 movieInfo += "Rotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\n";
@@ -146,6 +150,10 @@ var getMyStuff = {
         );
 
     },
+
+    doWhatItSays: function (query) {
+        // enter login here for FS
+    }
 }
 
 
