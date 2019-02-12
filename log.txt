@@ -1,0 +1,20 @@
+movie-this:
+Title: Star Wars: Episode VIII - The Last Jedi
+Year: 2017
+IMDB Rating: 7.2/10
+Rotten Tomatoes Rating: 91%
+Country: USA
+Language: English
+Plot: Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares for battle with the First Order.
+Actors: Mark Hamill, Carrie Fisher, Adam Driver, Daisy Ridley
+
+movie-this:
+Title: Aquaman
+Year: 2018
+IMDB Rating: 7.5/10
+Rotten Tomatoes Rating: 64%
+Country: Australia, USA
+Language: English
+Plot: Arthur Curry learns that he is the heir to the underwater kingdom of Atlantis, and must step forward to lead his people and be a hero to the world.
+Actors: Jason Momoa, Amber Heard, Willem Dafoe, Patrick Wilson
+
