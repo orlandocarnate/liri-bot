@@ -3,12 +3,23 @@ var fs = require("fs"); // imports filesystem
 var axios = require("axios"); // Make XMLHttpRequests from the browser
 var keys = require("./keys.js"); // imports keys.js files
 
-var spotify = new spotify(keys.spotify);
+// var spotify = new Spotify(keys.spotify);
 
 var nodeArg = process.argv; // get arguments from command line node liri.js <arguments>
-
+console.log(nodeArg);
 var nodeCommand = nodeArg[2];
+console.log("Command: ", nodeCommand);
 
+var nodeArgString;
+
+var tempArray = [];
+for (var i = 3; i< nodeArg.length; i++) {
+    tempArray.push(nodeArg[i]);
+}
+nodeArgString = tempArray.join("+");
+
+
+console.log("Argument String: ", nodeArgString);
 
 // concert-this uses the Bands In Town Artist Events API
 // format: node liri.js concert-this <artist/band name here>
@@ -18,6 +29,7 @@ var nodeCommand = nodeArg[2];
 
 // movie-this - use axios to retrieve data from OMDB API
 // format: node liri.js movie-this '<movie name here>'
+/*
 axios.get("http://www.omdbapi.com/?t=" + movName + "&y=&plot=short&apikey=trilogy").then(
   function(response) {
     // JSON response
@@ -36,7 +48,6 @@ axios.get("http://www.omdbapi.com/?t=" + movName + "&y=&plot=short&apikey=trilog
     addToFile(nodeComand + ":\n" + movieInfo);
   }
 );
-/*
    * Title of the movie.
    * Year the movie came out.
    * IMDB Rating of the movie.
@@ -57,7 +68,7 @@ axios.get("http://www.omdbapi.com/?t=" + movName + "&y=&plot=short&apikey=trilog
 function addToFile(arg) {
     fs.appendFile("log.txt", arg);
 }
-/* 
+/*
 fs.writeFile("mymovies.txt", "Interstellar, Tron", function(err) {
     // If the code experiences any errors it will log the error to the console.
     if (err) {
@@ -69,4 +80,3 @@ fs.writeFile("mymovies.txt", "Interstellar, Tron", function(err) {
   */
 
 
-  
