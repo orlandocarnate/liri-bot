@@ -1,28 +1,29 @@
-------------------------------
-spotify-this-song forever young:
-Artist: Eric Paslay
-Song Name: Young Forever
-Preview Link: Young Forever
-Album: Young Forever
+--------------------------------------------------
+spotify-this-song Never Gonna Give You Up
+--------------------------------------------------
+Artist: Rick Astley
+Song Name: Never Gonna Give You Up
+Preview Link: https://p.scdn.co/mp3-preview/22bf10aff02db272f0a053dff5c0063d729df988?cid=bb81cd9254364c88b9d581014b43eee9
+Album: Whenever You Need Somebody
 
-Artists: Trippie Redd, Young Thug, Reese LAFLARE
-Song Name: Forever Ever
-Preview Link: Forever Ever
-Album: LIFE'S A TRIP
+Artist: Rick Astley
+Song Name: Never Gonna Give You Up
+Preview Link: https://p.scdn.co/mp3-preview/50376a95e8639932167e0995debc66e6eb7a2a54?cid=bb81cd9254364c88b9d581014b43eee9
+Album: Platinum & Gold Collection
 
-Artist: Alphaville
-Song Name: Forever Young
-Preview Link: Forever Young
-Album: Forever Young
+Artist: The Black Keys
+Song Name: Never Gonna Give You Up
+Preview Link: https://p.scdn.co/mp3-preview/24dd2fb4c49f97fcb78401b85fbb65b9897d4664?cid=bb81cd9254364c88b9d581014b43eee9
+Album: Brothers
 
-Artists: Lil Yachty, Diplo
-Song Name: Forever Young
-Preview Link: Forever Young
-Album: Teenage Emotions
+Artist: Cake
+Song Name: Never, Never Gonna Give You Up
+Preview Link: https://p.scdn.co/mp3-preview/63c437780d5d746acd67ea732797f302ea59d9bd?cid=bb81cd9254364c88b9d581014b43eee9
+Album: b-sides and rarities
 
-Artist: BLACKPINK
-Song Name: Forever Young
-Preview Link: Forever Young
-Album: SQUARE UP
+Artist: Rick Astley
+Song Name: Never Gonna Give You Up - 7" Mix
+Preview Link: https://p.scdn.co/mp3-preview/ecbbc5e7ad43a37596200832839250004b4f711b?cid=bb81cd9254364c88b9d581014b43eee9
+Album: 80s 100 Hits
 
 

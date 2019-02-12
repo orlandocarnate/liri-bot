@@ -10,6 +10,8 @@ var spotify = new Spotify(keys.spotify);
 var nodeCommand;
 var nodeArgString;
 
+var hRule = "--------------------------------------------------\n";
+
 // var nodeArg = process.argv;
 // console.log(nodeArg);
 // console.log("Command: ", nodeCommand);
@@ -55,10 +57,9 @@ var getMyStuff = {
         if (queryString === '') {
             queryString = 'Rick Astley';
         }
-        axios.get("https://rest.bandsintown.com/artists/" + queryString + "/events?app_id=codingbootcamp").then(
+        axios.get("https://rest.bandsintown.com/artists/" + queryString + "/events?app_id=codingbootcamp&display-limit=5").then(
             function (response) {
-                console.log(response.data.length);
-                var concertInfo = "Artist search: " + queryString + "\n";
+                var concertInfo = hRule + nodeCommand + " " + queryString  + "\n" + hRule;
                 for (var i = 0; i < response.data.length; i++) {
                     // display JSON response
                     concertInfo += "Venue: " + response.data[i].venue.name + "\n";
@@ -73,7 +74,7 @@ var getMyStuff = {
                 }
 
                 // add to log.txt
-                addToFile(nodeCommand + " " + queryString + ":\n" + concertInfo);
+                addToFile(concertInfo);
             })
             .catch(function (error) {
                 console.log(error);
@@ -84,11 +85,14 @@ var getMyStuff = {
     // spotify-this-song
     // format: node liri.js spotify-this-song '<song name here>'
     spotifyThis: function (query) {
+        if (query === '') {
+            query = 'Never Gonna Give You Up';
+        }
         spotify.search({ type: 'track', query: query, limit: 5 }, function (err, data) {
             if (err) {
                 return console.log('Error occurred: ' + err);
             }
-            var songInfo = nodeCommand + " " + query + ":\n";
+            var songInfo = hRule + nodeCommand + " " + query + "\n" + hRule;
             for (var i = 0; i < data.tracks.items.length; i++) {
                 var artistsArray = [];
                 // Artist or Artists logic
@@ -104,7 +108,7 @@ var getMyStuff = {
                 }
                 songInfo += artistsArray.join(", ") + "\n";
                 songInfo += "Song Name: " + data.tracks.items[i].name + "\n";
-                songInfo += "Preview Link: " + data.tracks.items[i].name + "\n";
+                songInfo += "Preview Link: " + data.tracks.items[i].preview_url + "\n";
                 songInfo += "Album: " + data.tracks.items[i].album.name + "\n\n";
                 
                 
@@ -154,8 +158,7 @@ var getMyStuff = {
 
 // APPEND searches to log.txt
 function addToFile(arg) {
-    var appendText = "------------------------------\n" + arg;
-    fs.appendFile("log.txt", appendText + "\n", function (err) {
+    fs.appendFile("log.txt", arg + "\n", function (err) {
         if (err) {
             return console.log(err);
         }
