@@ -133,11 +133,14 @@ var getMyStuff = {
                 movieInfo += "Actors: " + response.data.Actors + "\n";
                 // PUSH TO FILE
                 addToFile(nodeCommand + ":\n" + movieInfo);
+                console.log(movieInfo);
             }
         );
 
     },
 
+    // do-what-it-says
+    // format: node liri.js do-what-it-says
     doWhatItSays: function (query) {
         // FS read method
         fs.readFile("random.txt", "utf8", function (error, data) {
@@ -161,8 +164,6 @@ var getMyStuff = {
 }
 
 
-// do-what-it-says
-// format: node liri.js do-what-it-says
 
 // BONUS In addition to logging the data to your terminal/bash 
 // window, output the data to a .txt file called log.txt.
