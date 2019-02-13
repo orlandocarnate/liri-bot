@@ -12,19 +12,6 @@ var nodeArgString;
 
 var hRule = "--------------------------------------------------\n";
 
-// var nodeArg = process.argv;
-// console.log(nodeArg);
-// console.log("Command: ", nodeCommand);
-// var nodeCommand = nodeArg[2];
-
-// var nodeArgString;
-
-
-
-// console.log("Argument String: ", nodeArgString);
-
-
-
 var getMyStuff = {
     // get arguments from command line node liri.js <arguments>
     processArgs: function (arg) {
@@ -134,7 +121,6 @@ var getMyStuff = {
         }
         axios.get("http://www.omdbapi.com/?t=" + queryString + "&y=&plot=short&apikey=trilogy").then(
             function (response) {
-                console.log(response);
                 // display JSON response
                 var movieInfo = hRule + nodeCommand + " " + queryString + "\n" + hRule;
                 movieInfo += "Title: " + response.data.Title + "\n";
@@ -145,9 +131,6 @@ var getMyStuff = {
                 movieInfo += "Language: " + response.data.Language + "\n";
                 movieInfo += "Plot: " + response.data.Plot + "\n";
                 movieInfo += "Actors: " + response.data.Actors + "\n";
-
-                console.log(movieInfo);
-
                 // PUSH TO FILE
                 addToFile(nodeCommand + ":\n" + movieInfo);
             }
@@ -164,17 +147,14 @@ var getMyStuff = {
                 return console.log(error);
             }
 
-            // We will then print the contents of data
+            // check data from file
             console.log(data);
 
-            // Then split it by commas (to make it more readable)
+            // split into array
             var dataArray = data.split(",");
 
-            var dataCommand = dataArray[0];
-            var dataArg = dataArray[0];
-
-            // We will then re-display the content as an array for later use.
-            console.log(dataArr);
+            // call the checkCommand method
+            getMyStuff.checkCommand(dataArray[0], dataArray[1]);
 
         });
     }
@@ -211,4 +191,4 @@ fs.writeFile("mymovies.txt", "Interstellar, Tron", function(err) {
   */
 
 
-processArgs(process.argv);
+getMyStuff.processArgs(process.argv);
