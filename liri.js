@@ -23,37 +23,41 @@ var hRule = "--------------------------------------------------\n";
 
 // console.log("Argument String: ", nodeArgString);
 
-// get arguments from command line node liri.js <arguments>
-function processArgs(arg) {
-    var tempArray = [];
-    nodeCommand = arg[2].toLowerCase();
-    for (var i = 3; i < arg.length; i++) {
-        tempArray.push(arg[i]);
-    }
-    nodeArgString = tempArray.join(" ");
-    console.log("nodeArgString:", nodeArgString);
 
-    switch (nodeCommand) {
-        case "concert-this":
-            getMyStuff.concertThis(nodeArgString);
-            break;
-        case "spotify-this-song":
-            getMyStuff.spotifyThis(nodeArgString);
-            break;
-        case "movie-this":
-            getMyStuff.movieThis(nodeArgString);
-            break;
-        case "do-what-it-says":
-            getMyStuff.doWhatItSays(nodeArgString);
-            break;
-        default:
-            console.log("Sorry, I don't know that command.");
-            break;
-    }
-
-}
 
 var getMyStuff = {
+    // get arguments from command line node liri.js <arguments>
+    processArgs: function (arg) {
+        var tempArray = [];
+        nodeCommand = arg[2].toLowerCase();
+        for (var i = 3; i < arg.length; i++) {
+            tempArray.push(arg[i]);
+        }
+        nodeArgString = tempArray.join(" ");
+        console.log("nodeArgString:", nodeArgString);
+        this.checkCommand(nodeCommand, nodeArgString);
+    },
+
+    // determine command
+    checkCommand: function (nodeCmd, nodeArg) {
+        switch (nodeCmd) {
+            case "concert-this":
+                this.concertThis(nodeArg);
+                break;
+            case "spotify-this-song":
+                this.spotifyThis(nodeArg);
+                break;
+            case "movie-this":
+                this.movieThis(nodeArg);
+                break;
+            case "do-what-it-says":
+                this.doWhatItSays(nodeArg);
+                break;
+            default:
+                console.log("Sorry, I don't know that command.");
+                break;
+        }
+    },
     // concert-this uses the Bands In Town Artist Events API
     // format: node liri.js concert-this <artist/band name here>
     concertThis: function (queryString) {
@@ -152,7 +156,27 @@ var getMyStuff = {
     },
 
     doWhatItSays: function (query) {
-        // enter login here for FS
+        // FS read method
+        fs.readFile("random.txt", "utf8", function (error, data) {
+
+            // If the code experiences any errors it will log the error to the console.
+            if (error) {
+                return console.log(error);
+            }
+
+            // We will then print the contents of data
+            console.log(data);
+
+            // Then split it by commas (to make it more readable)
+            var dataArray = data.split(",");
+
+            var dataCommand = dataArray[0];
+            var dataArg = dataArray[0];
+
+            // We will then re-display the content as an array for later use.
+            console.log(dataArr);
+
+        });
     }
 }
 
