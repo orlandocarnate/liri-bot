@@ -45,15 +45,16 @@ var getMyStuff = {
                 break;
         }
     },
+
     // concert-this uses the Bands In Town Artist Events API
     // format: node liri.js concert-this <artist/band name here>
-    concertThis: function (queryString) {
-        if (queryString === '') {
-            queryString = 'Rick Astley';
+    concertThis: function (query) {
+        if (query === '') {
+            query = 'Rick Astley';
         }
-        axios.get("https://rest.bandsintown.com/artists/" + queryString + "/events?app_id=codingbootcamp&display-limit=5").then(
+        axios.get("https://rest.bandsintown.com/artists/" + query + "/events?app_id=codingbootcamp&display-limit=5").then(
             function (response) {
-                var concertInfo = hRule + nodeCommand + " " + queryString + "\n" + hRule;
+                var concertInfo = hRule + nodeCommand + " " + query + "\n" + hRule;
                 for (var i = 0; i < response.data.length; i++) {
                     // display JSON response
                     concertInfo += "Venue: " + response.data[i].venue.name + "\n";
@@ -68,7 +69,7 @@ var getMyStuff = {
                 }
 
                 // add to log.txt
-                addToFile(concertInfo);
+                addToFile(nodeCommand, query);
             })
             .catch(function (error) {
                 console.log(error);
@@ -108,21 +109,22 @@ var getMyStuff = {
 
                 console.log(songInfo);
             }
-            addToFile(songInfo);
+
+            addToFile(nodeCommand, query);
 
         });
     },
 
     // movie-this - use axios to retrieve data from OMDB API
     // format: node liri.js movie-this '<movie name here>'
-    movieThis: function (queryString) {
-        if (queryString === '') {
-            queryString = 'Mr Nobody';
+    movieThis: function (query) {
+        if (query === '') {
+            query = 'Mr Nobody';
         }
-        axios.get("http://www.omdbapi.com/?t=" + queryString + "&y=&plot=short&apikey=trilogy").then(
+        axios.get("http://www.omdbapi.com/?t=" + query + "&y=&plot=short&apikey=trilogy").then(
             function (response) {
                 // display JSON response
-                var movieInfo = hRule + nodeCommand + " " + queryString + "\n" + hRule;
+                var movieInfo = hRule + nodeCommand + " " + query + "\n" + hRule;
                 movieInfo += "Title: " + response.data.Title + "\n";
                 movieInfo += "Year: " + response.data.Year + "\n";
                 movieInfo += "IMDB Rating: " + response.data.Ratings[0].Value + "\n";
@@ -132,8 +134,11 @@ var getMyStuff = {
                 movieInfo += "Plot: " + response.data.Plot + "\n";
                 movieInfo += "Actors: " + response.data.Actors + "\n";
                 // PUSH TO FILE
-                addToFile(nodeCommand + ":\n" + movieInfo);
+
+                addToFile(nodeCommand, query);
                 console.log(movieInfo);
+                // DATE, COMMAND, PARAMETER - LOG should be short, not have everything.
+                // LOGS are concise.
             }
         );
 
@@ -163,15 +168,16 @@ var getMyStuff = {
     }
 }
 
-
-
 // BONUS In addition to logging the data to your terminal/bash 
 // window, output the data to a .txt file called log.txt.
 // Make sure you append each command you run to the log.txt file.
 
 // APPEND searches to log.txt
-function addToFile(arg) {
-    fs.appendFile("log.txt", arg + "\n", function (err) {
+function addToFile(nodeCmd, query) {
+    var logFile = "[" + moment().format("YYYY/MM/DD hh:mm:ss") + "] ";
+    logFile += nodeCmd + " " + query;
+
+    fs.appendFile("log.txt", logFile + "\n", function (err) {
         if (err) {
             return console.log(err);
         }
@@ -180,16 +186,6 @@ function addToFile(arg) {
         }
     });
 };
-/*
-fs.writeFile("mymovies.txt", "Interstellar, Tron", function(err) {
-    // If the code experiences any errors it will log the error to the console.
-    if (err) {
-      return console.log(err);
-    }
-    // Otherwise, it will print: "movies.txt was updated!"
-    console.log("movies.txt was updated!");
-  });
-  */
 
 
 getMyStuff.processArgs(process.argv);
