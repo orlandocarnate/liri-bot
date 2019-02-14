@@ -3,14 +3,13 @@ LIRI is a Language Interpretation and Recognition Interface. LIRI will be a comm
 
 ## Screenshots
 
-### Spotify
--[x]
-* If there is more than 1 artist, then output plural "Artists", otherwise singular "Artist"
+### Concert This (Bands In Town API)
+![Concert-This](assets/images/concert-this.gif)
 
-### Bands In Town
--[x]
+### Spotify This Song (Spotify API)
+![Spotify-This-Song](assets/images/spotify-this-song.gif)
 
-### OMDB
--[ ]
+### Movie This (OMDB API)
+![Movie-This](assets/images/movie-this.gif)
 
 :sparkles: :camel: :boom:
