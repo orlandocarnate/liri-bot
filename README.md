@@ -24,17 +24,19 @@ In this project we focused on using **Node.js** in the command line and taking p
     * A zero-dependency module for loading environment variables from `.env` into `process.env`.
     * Installation: `npm install dotenv`
 * [FS module](https://nodejs.org/api/fs.html)
-    * "The `fs` module provides an API for interacting with the file system in a manner closely modeled around standard POSIX functions."([link](https://nodejs.org/api/fs.html#fs_file_system))
+    * *"The `fs` module provides an API for interacting with the file system in a manner closely modeled around standard POSIX functions."* ([link](https://nodejs.org/api/fs.html#fs_file_system))
 
 ## The 'getMyStuff' object
 The `getMyStuff` object contains multiple methods for the LIRI app to determine which command was entered and then calls that specific method to obtain and display specific information.
-* `processArgs ` method
+* `processArgs ` method 
+    * gets an array from `[process.argv](https://nodejs.org/api/process.html#process_process_argv)`, which is a *"property that returns an array containing the command line arguments passed when the Node.js process was launched."*
 * `checkCommand` method
-* `concertThis` method
-* `spotifyThis` method
-* `movieThis` method
-* `doWhatItSays` method
-* `addToFile` method
+    * Uses the `switch/case` statement checks if the command argument matches an existing method and calls that method.
+* `concertThis` method.
+* `spotifyThis` method.
+* `movieThis` method.
+* `doWhatItSays` method.
+* `addToFile` method.
 
 
 ## Running the program
