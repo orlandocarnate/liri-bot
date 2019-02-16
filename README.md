@@ -41,26 +41,46 @@ The `getMyStuff` object contains multiple methods for the LIRI app to determine 
 
 ## Running the program
 LIRI is run in the command line.
+
 * `node liri.js concert-this <artist/band name here>` runs the `concertThis` method along with the name of the artist or band as an argument. It gets info from the Bands In Town API using Axios and displays multiple show events.
     * If no argument (Artist or Band) is entered, it will search using "Rick Astley" as a default value
     * Save command and argument to `addToFile` method.
+    * Screenshot:
+        * ![Concert-This](assets/images/concert-this.gif)
+
 * `node liri.js spotify-this-song <song name here>` runs the `spotifyThis` method.
     * If a song is entered, it will send it as a query to the Spotify API and returns the artist's name, song name, preview link, and album.
     * If no argument is given, "Never gonna give you up" will be used as a default argument.
     * Save command and argument to `addToFile` method.
+    * Screenshot:
+        * ![Spotify-This-Song](assets/images/spotify-this-song.gif)
+        
+
+
 * `node liri.js movie-this <movie name here>` runs the `movieThis` method using Axios and OMDB API.
     * If a movie is entered, it returns the movie title, year, IMDB Rating, RT rating, country, language, plot, and actors.
     * If no movie is entered, a default value of "Mr Nobody" is used.
     * Save command and argument to `addToFile` method.
+    * Screenshot:
+        * ![Movie-This](assets/images/movie-this.gif)
+
+
 * `node liri.js do-what-it-says` runs the `doWhatItSays` method using the FS module to get a string from the `random.txt` file.
     * The "," in the string will be used as a delimiter using `.split(",") and saves the string as two items in an array.
     * The first item is used as the command and the second item is the query argument.
     * The command and query argument are passed to the `checkCommand` method which then calls the appropriate method.
     * Save command and argument to `addToFile` method.
+    * Screenshot:
+        * ![Do-What-It-Says](assets/images/do-what-it-says.gif)
+
+
+
 * The`addToFile` method uses the `FS` module to append a string to the `log.txt` file.
     * Moment.js is used to getthe current time and format it as `[YYYY/DD/MM hh:mm:ss]`.
     * Here's the following format of the string
         * `[YYYY/DD/MM hh:mm:ss] <command-name> <argument>`
+    * Screenshot
+        * ![addToFile](assets/images/log-file.jpg)
 
 ## Screenshots
 
