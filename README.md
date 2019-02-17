@@ -81,6 +81,8 @@ LIRI is run in the command line.
         * `[YYYY/DD/MM hh:mm:ss] <command-name> <argument>`
     * Screenshot
         * ![addToFile](assets/images/logfile.gif)
+    * Log.txt file:
+        * [log.txt](log.txt)
 
 ## Other references
 * [EZGIF.COM](https://ezgif.com/video-to-gif) - converts MP4 to animated GIF online with optimizing tools.
