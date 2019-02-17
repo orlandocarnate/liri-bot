@@ -75,14 +75,17 @@ LIRI is run in the command line.
 
 
 
-* The`addToFile` method uses the `FS` module to append a string to the `log.txt` file.
+* The `addToFile` method uses the `FS` module to append a string to the `log.txt` file.
     * Moment.js is used to getthe current time and format it as `[YYYY/DD/MM hh:mm:ss]`.
-    * Here's the following format of the string
+    * Here's the heading of each appended string:
         * `[YYYY/DD/MM hh:mm:ss] <command-name> <argument>`
     * Screenshot
-        * ![addToFile](assets/images/log-file.jpg)
+        * ![addToFile](assets/images/logfile.gif)
 
-## Screenshots
+## Other references
+* [EZGIF.COM](https://ezgif.com/video-to-gif) - converts MP4 to animated GIF online with optimizing tools.
+
+<!-- ## Screenshots
 
 ### Concert This (Bands In Town API)
 ![Concert-This](assets/images/concert-this.gif)
@@ -93,4 +96,4 @@ LIRI is run in the command line.
 ### Movie This (OMDB API)
 ![Movie-This](assets/images/movie-this.gif)
 
-:sparkles: :camel: :boom:
+:sparkles: :camel: :boom: -->

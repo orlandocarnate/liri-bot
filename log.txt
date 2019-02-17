@@ -1,9 +1,347 @@
-[2019/02/14 06:28:41] movie-this Mr Nobody
-[2019/02/14 06:28:49] movie-this The Last Starfighter
-[2019/02/14 06:29:10] concert-this Rick Astley
-[2019/02/14 06:29:21] concert-this marshmello
-[2019/02/14 06:29:33] spotify-this-song Never Gonna Give You Up
-[2019/02/14 06:29:41] spotify-this-song alone
-[2019/02/14 06:30:17] do-what-it-says "I Want it That Way"
-[2019/02/16 04:00:58] movie-this Harry Potter and the Chamber of Secrets
-[2019/02/16 04:02:00] spotify-this-song Eye of the Tiger
+--------------------------------------------------
+[2019/02/16 04:59:34] concert-this Rick Astley
+--------------------------------------------------
+Venue: FlyDSA Arena
+Location: Sheffield, United Kingdom
+Date of Event: 04/12/2019
+
+Venue: FlyDSA Arena
+Location: Sheffield, United Kingdom
+Date of Event: 04/13/2019
+
+Venue: FlyDSA Arena
+Location: Sheffield, United Kingdom
+Date of Event: 04/15/2019
+
+Venue: FlyDSA Arena
+Location: Sheffield, United Kingdom
+Date of Event: 04/16/2019
+
+Venue: SSE Hydro
+Location: Glasgow, United Kingdom
+Date of Event: 04/18/2019
+
+Venue: SSE Hydro
+Location: Glasgow, United Kingdom
+Date of Event: 04/19/2019
+
+Venue: SSE Hydro
+Location: Glasgow, United Kingdom
+Date of Event: 04/20/2019
+
+Venue: Manchester Arena
+Location: Manchester, United Kingdom
+Date of Event: 04/22/2019
+
+Venue: Manchester Arena
+Location: Manchester, United Kingdom
+Date of Event: 04/23/2019
+
+Venue: Manchester Arena
+Location: Manchester, United Kingdom
+Date of Event: 04/25/2019
+
+Venue: Manchester Arena
+Location: Manchester, United Kingdom
+Date of Event: 04/26/2019
+
+Venue: Manchester Arena
+Location: Manchester, United Kingdom
+Date of Event: 04/27/2019
+
+Venue: 3Arena
+Location: Dublin, Ireland
+Date of Event: 04/29/2019
+
+Venue: 3Arena
+Location: Dublin, Ireland
+Date of Event: 04/30/2019
+
+Venue: The O2 Arena
+Location: London, United Kingdom
+Date of Event: 05/02/2019
+
+Venue: The O2
+Location: London, United Kingdom
+Date of Event: 05/03/2019
+
+Venue: The O2
+Location: London, United Kingdom
+Date of Event: 05/04/2019
+
+Venue: The O2
+Location: London, United Kingdom
+Date of Event: 05/05/2019
+
+Venue: The O2
+Location: London, United Kingdom
+Date of Event: 05/07/2019
+
+Venue: The O2
+Location: London, United Kingdom
+Date of Event: 05/08/2019
+
+Venue: The O2
+Location: London, United Kingdom
+Date of Event: 05/09/2019
+
+Venue: The O2
+Location: London, United Kingdom
+Date of Event: 05/10/2019
+
+Venue: Arena Birmingham
+Location: Birmingham, United Kingdom
+Date of Event: 05/12/2019
+
+Venue: Arena
+Location: Birmingham, United Kingdom
+Date of Event: 05/13/2019
+
+Venue: Arena Birmingham
+Location: Birmingham, United Kingdom
+Date of Event: 05/14/2019
+
+Venue: Arena Birmingham
+Location: Birmingham, United Kingdom
+Date of Event: 05/16/2019
+
+Venue: Arena Birmingham
+Location: Birmingham, United Kingdom
+Date of Event: 05/17/2019
+
+Venue: Arena Birmingham
+Location: Birmingham, United Kingdom
+Date of Event: 05/18/2019
+
+Venue: Arena Birmingham
+Location: Birmingham, United Kingdom
+Date of Event: 05/19/2019
+
+Venue: Stadium MK
+Location: Milton Keynes, United Kingdom
+Date of Event: 05/23/2019
+
+Venue: St Mary's
+Location: Southampton, United Kingdom
+Date of Event: 05/25/2019
+
+Venue: St Mary's Stadium
+Location: Southampton, United Kingdom
+Date of Event: 05/26/2019
+
+Venue: Ashton Gate
+Location: Bristol, United Kingdom
+Date of Event: 05/28/2019
+
+Venue: Carrow Road
+Location: Norwich, United Kingdom
+Date of Event: 05/30/2019
+
+Venue: Riverside
+Location: Middlesbrough, United Kingdom
+Date of Event: 06/01/2019
+
+Venue: John Smith's Stadium
+Location: Huddersfield, United Kingdom
+Date of Event: 06/04/2019
+
+Venue: Anfield
+Location: Liverpool, United Kingdom
+Date of Event: 06/06/2019
+
+Venue: Principality Stadium
+Location: Cardiff, United Kingdom
+Date of Event: 06/08/2019
+
+Venue: Royal Botanic Gardens, Kew
+Location: London, United Kingdom
+Date of Event: 07/09/2019
+
+Venue: Tynemouth Priory and Castle
+Location: Tynemouth, United Kingdom
+Date of Event: 07/13/2019
+
+Venue: Kew Gardens
+Location: London, United Kingdom
+Date of Event: 07/14/2019
+
+Venue: Haydock Park Racecourse
+Location: Newton-le-willows, United Kingdom
+Date of Event: 07/20/2019
+
+Venue: Jardins Terramar (Auditori)
+Location: Sitges, Spain
+Date of Event: 07/28/2019
+
+
+--------------------------------------------------
+[2019/02/16 05:00:01] spotify-this-song Never Gonna Give You Up
+--------------------------------------------------
+Artist: Rick Astley
+Song Name: Never Gonna Give You Up
+Preview Link: https://p.scdn.co/mp3-preview/22bf10aff02db272f0a053dff5c0063d729df988?cid=bb81cd9254364c88b9d581014b43eee9
+Album: Whenever You Need Somebody
+
+Artist: Rick Astley
+Song Name: Never Gonna Give You Up
+Preview Link: https://p.scdn.co/mp3-preview/50376a95e8639932167e0995debc66e6eb7a2a54?cid=bb81cd9254364c88b9d581014b43eee9
+Album: Platinum & Gold Collection
+
+Artist: The Black Keys
+Song Name: Never Gonna Give You Up
+Preview Link: https://p.scdn.co/mp3-preview/24dd2fb4c49f97fcb78401b85fbb65b9897d4664?cid=bb81cd9254364c88b9d581014b43eee9
+Album: Brothers
+
+Artist: Rick Astley
+Song Name: Never Gonna Give You Up
+Preview Link: https://p.scdn.co/mp3-preview/f2e1c94ea8d532df92d33641aaea7c188cf6b16a?cid=bb81cd9254364c88b9d581014b43eee9
+Album: Românticas Anos 80
+
+Artist: Cake
+Song Name: Never, Never Gonna Give You Up
+Preview Link: https://p.scdn.co/mp3-preview/63c437780d5d746acd67ea732797f302ea59d9bd?cid=bb81cd9254364c88b9d581014b43eee9
+Album: b-sides and rarities
+
+
+--------------------------------------------------
+[2019/02/16 05:00:17] movie-this Mr Nobody
+--------------------------------------------------
+Title: Mr. Nobody
+Year: 2009
+IMDB Rating: 7.8/10
+Rotten Tomatoes Rating: 67%
+Country: Belgium, Germany, Canada, France, USA, UK
+Language: English, Mohawk
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+
+--------------------------------------------------
+[2019/02/16 05:00:44] do-what-it-says "I Want it That Way"
+--------------------------------------------------
+Artist: Backstreet Boys
+Song Name: I Want It That Way
+Preview Link: https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=bb81cd9254364c88b9d581014b43eee9
+Album: The Hits--Chapter One
+
+Artist: Backstreet Boys
+Song Name: I Want It That Way
+Preview Link: https://p.scdn.co/mp3-preview/b8c2410a5acb68b462be6ac85f1312430e2b149c?cid=bb81cd9254364c88b9d581014b43eee9
+Album: Millennium
+
+Artist: Anthem Lights
+Song Name: I Want It That Way
+Preview Link: https://p.scdn.co/mp3-preview/4a163fbfa2dbbe4433f277e0e7395dca656364f5?cid=bb81cd9254364c88b9d581014b43eee9
+Album: Covers Part IV
+
+Artist: Tyler and Mark
+Song Name: I Want It That Way
+Preview Link: https://p.scdn.co/mp3-preview/99c791194bbd4e5f315ca8964babf0b69bc520b3?cid=bb81cd9254364c88b9d581014b43eee9
+Album: Beautiful Dreams
+
+Artist: "Weird Al" Yankovic
+Song Name: Ebay (Parody of "I Want It That Way" by the Backstreet Boys)
+Preview Link: https://p.scdn.co/mp3-preview/e217ea111ab84a777f204252fce4b18d5de3ae80?cid=bb81cd9254364c88b9d581014b43eee9
+Album: Poodle Hat
+
+
+--------------------------------------------------
+[2019/02/16 05:01:33] concert-this Marshmello
+--------------------------------------------------
+Venue: Vh1 Supersonic Arcade Feat. Marshmello – Gurgaon
+Location: Gurgaon, India
+Date of Event: 02/16/2019
+
+Venue: Vh1 Supersonic
+Location: Pune, India
+Date of Event: 02/17/2019
+
+Venue: Crystal Design Center
+Location: Bangkok, Thailand
+Date of Event: 02/20/2019
+
+Venue: Ultra Australia - Melbourne
+Location: Melbourne, Australia
+Date of Event: 02/23/2019
+
+Venue: Ultra Australia - Sydney
+Location: Parramatta, Australia
+Date of Event: 02/24/2019
+
+Venue: 幕張メッセ
+Location: 千葉市, 千葉県, 日本
+Date of Event: 03/22/2019
+
+Venue: 神戸ワールド記念ホール
+Location: 神戸市, 兵庫県, 日本
+Date of Event: 03/23/2019
+
+Venue: Ultra Music Festival - Miami
+Location: Miami, FL, United States
+Date of Event: 03/29/2019
+
+Venue: Brännbollsyran
+Location: Umeå, Sweden
+Date of Event: 05/30/2019
+
+Venue: Tor wyścigów konnych Służewiec
+Location: Warszawa, Poland
+Date of Event: 05/31/2019
+
+Venue: Commerzbank-Arena
+Location: Frankfurt Am Main, Germany
+Date of Event: 06/07/2019
+
+Venue: Belsonic
+Location: Belfast, Ireland
+Date of Event: 06/26/2019
+
+Venue: Plaine De La Filhole - Plein Air
+Location: Marmande, France
+Date of Event: 06/27/2019
+
+Venue: 8621 Zamárdi Siófoki út
+Location: Zamardi, Hungary
+Date of Event: 07/03/2019
+
+
+--------------------------------------------------
+[2019/02/16 05:01:57] spotify-this-song Eye of the tiger
+--------------------------------------------------
+Artist: Survivor
+Song Name: Eye of the Tiger
+Preview Link: https://p.scdn.co/mp3-preview/9e37f230afd37042e49f3d144c3b94e0b39ef8ba?cid=bb81cd9254364c88b9d581014b43eee9
+Album: Rocky IV
+
+Artist: Survivor
+Song Name: Eye of the Tiger
+Preview Link: https://p.scdn.co/mp3-preview/0305e216dd77b09c395724bd2c3506cd1047dad2?cid=bb81cd9254364c88b9d581014b43eee9
+Album: Eye Of The Tiger
+
+Artist: Survivor
+Song Name: Eye of the Tiger
+Preview Link: https://p.scdn.co/mp3-preview/60e1077a230d67e197799ef9101ad04982730f95?cid=bb81cd9254364c88b9d581014b43eee9
+Album: The Best Of Survivor
+
+Artist: Survivor
+Song Name: Eye of the Tiger
+Preview Link: https://p.scdn.co/mp3-preview/87c16ecb6ef2618e8acd688d77b9f9f76d090ee2?cid=bb81cd9254364c88b9d581014b43eee9
+Album: Ultimate Survivor
+
+Artist: 2CELLOS
+Song Name: Eye of the Tiger
+Preview Link: https://p.scdn.co/mp3-preview/765f151647d175b870707fdc94b5653ddf809fde?cid=bb81cd9254364c88b9d581014b43eee9
+Album: Let There Be Cello
+
+
+--------------------------------------------------
+[2019/02/16 05:02:18] movie-this The Last Starfighter
+--------------------------------------------------
+Title: The Last Starfighter
+Year: 1984
+IMDB Rating: 6.7/10
+Rotten Tomatoes Rating: 77%
+Country: USA
+Language: English
+Plot: Video game expert Alex Rogan finds himself transported to another planet after conquering The Last Starfighter video game only to find out it was just a test. He was recruited to join the team of best starfighters to defend their world from the attack.
+Actors: Kay E. Kuter, Dan Mason, Lance Guest, Dan O'Herlihy
+

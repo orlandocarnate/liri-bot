@@ -54,7 +54,8 @@ var getMyStuff = {
         }
         axios.get("https://rest.bandsintown.com/artists/" + query + "/events?app_id=codingbootcamp&display-limit=5").then(
             function (response) {
-                var concertInfo = hRule + nodeCommand + " " + query + "\n" + hRule;
+                // var concertInfo = hRule + nodeCommand + " " + query + "\n" + hRule;
+                var concertInfo = "";
                 for (var i = 0; i < response.data.length; i++) {
                     // display JSON response
                     concertInfo += "Venue: " + response.data[i].venue.name + "\n";
@@ -69,7 +70,7 @@ var getMyStuff = {
                 }
 
                 // add to log.txt
-                addToFile(nodeCommand, query);
+                addToFile(nodeCommand, query, concertInfo);
             })
             .catch(function (error) {
                 console.log(error);
@@ -87,7 +88,8 @@ var getMyStuff = {
             if (err) {
                 return console.log('Error occurred: ' + err);
             }
-            var songInfo = hRule + nodeCommand + " " + query + "\n" + hRule;
+            // var songInfo = hRule + nodeCommand + " " + query + "\n" + hRule;
+            var songInfo = "";
             for (var i = 0; i < data.tracks.items.length; i++) {
                 var artistsArray = [];
                 // Artist or Artists logic
@@ -110,7 +112,7 @@ var getMyStuff = {
                 console.log(songInfo);
             }
 
-            addToFile(nodeCommand, query);
+            addToFile(nodeCommand, query, songInfo);
 
         });
     },
@@ -124,8 +126,7 @@ var getMyStuff = {
         axios.get("http://www.omdbapi.com/?t=" + query + "&y=&plot=short&apikey=trilogy").then(
             function (response) {
                 // display JSON response
-                var movieInfo = hRule + nodeCommand + " " + query + "\n" + hRule;
-                movieInfo += "Title: " + response.data.Title + "\n";
+                var movieInfo = "Title: " + response.data.Title + "\n";
                 movieInfo += "Year: " + response.data.Year + "\n";
                 movieInfo += "IMDB Rating: " + response.data.Ratings[0].Value + "\n";
                 movieInfo += "Rotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\n";
@@ -135,7 +136,7 @@ var getMyStuff = {
                 movieInfo += "Actors: " + response.data.Actors + "\n";
                 // PUSH TO FILE
 
-                addToFile(nodeCommand, query);
+                addToFile(nodeCommand, query, movieInfo);
                 console.log(movieInfo);
                 // DATE, COMMAND, PARAMETER - LOG should be short, not have everything.
                 // LOGS are concise.
@@ -173,9 +174,9 @@ var getMyStuff = {
 // Make sure you append each command you run to the log.txt file.
 
 // APPEND searches to log.txt
-function addToFile(nodeCmd, query) {
-    var logFile = "[" + moment().format("YYYY/MM/DD hh:mm:ss") + "] ";
-    logFile += nodeCmd + " " + query;
+function addToFile(nodeCmd, query, info) {
+    var logFile = hRule +  "[" + moment().format("YYYY/MM/DD hh:mm:ss") + "] ";
+    logFile += nodeCmd + " " + query + "\n" + hRule + info ;
 
     fs.appendFile("log.txt", logFile + "\n", function (err) {
         if (err) {
