@@ -21,7 +21,7 @@ var getMyStuff = {
             tempArray.push(arg[i]);
         }
         nodeArgString = tempArray.join(" ");
-        console.log("nodeArgString:", nodeArgString);
+        // console.log("nodeArgString:", nodeArgString);
         this.checkCommand(nodeCommand, nodeArgString);
     },
 
@@ -73,7 +73,7 @@ var getMyStuff = {
                 addToFile(nodeCommand, query, concertInfo);
             })
             .catch(function (error) {
-                console.log(error);
+                console.log(`Sorry, the band "${query}" could not be found.`);
             });
 
     },
@@ -86,7 +86,7 @@ var getMyStuff = {
         }
         spotify.search({ type: 'track', query: query, limit: 5 }, function (err, data) {
             if (err) {
-                return console.log('Error occurred: ' + err);
+                return console.log(`Sorry, "${query}" could not be found.`);
             }
             // var songInfo = hRule + nodeCommand + " " + query + "\n" + hRule;
             var songInfo = "";
@@ -123,8 +123,9 @@ var getMyStuff = {
         if (query === '') {
             query = 'Mr Nobody';
         }
-        axios.get("http://www.omdbapi.com/?t=" + query + "&y=&plot=short&apikey=trilogy").then(
-            function (response) {
+        axios.get("http://www.omdbapi.com/?t=" + query + "&y=&plot=short&apikey=trilogy")
+            // success
+            .then(function (response) {
                 // display JSON response
                 var movieInfo = "Title: " + response.data.Title + "\n";
                 movieInfo += "Year: " + response.data.Year + "\n";
@@ -140,8 +141,12 @@ var getMyStuff = {
                 console.log(movieInfo);
                 // DATE, COMMAND, PARAMETER - LOG should be short, not have everything.
                 // LOGS are concise.
-            }
-        );
+            })
+            // catch any errors
+            .catch(function(error) {
+                // console.log("!!!ERROR!!!:", error);
+                console.log(`Sorry, the movie "${query}" was not found in the OMBD`);
+            })
 
     },
 
@@ -175,8 +180,8 @@ var getMyStuff = {
 
 // APPEND searches to log.txt
 function addToFile(nodeCmd, query, info) {
-    var logFile = hRule +  "[" + moment().format("YYYY/MM/DD hh:mm:ss") + "] ";
-    logFile += nodeCmd + " " + query + "\n" + hRule + info ;
+    var logFile = hRule + "[" + moment().format("YYYY/MM/DD hh:mm:ss") + "] ";
+    logFile += nodeCmd + " " + query + "\n" + hRule + info;
 
     fs.appendFile("log.txt", logFile + "\n", function (err) {
         if (err) {

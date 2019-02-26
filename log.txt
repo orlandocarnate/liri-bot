@@ -345,3 +345,47 @@ Language: English
 Plot: Video game expert Alex Rogan finds himself transported to another planet after conquering The Last Starfighter video game only to find out it was just a test. He was recruited to join the team of best starfighters to defend their world from the attack.
 Actors: Kay E. Kuter, Dan Mason, Lance Guest, Dan O'Herlihy
 
+--------------------------------------------------
+[2019/02/26 01:22:57] movie-this the last starfighter
+--------------------------------------------------
+Title: The Last Starfighter
+Year: 1984
+IMDB Rating: 6.7/10
+Rotten Tomatoes Rating: 77%
+Country: USA
+Language: English
+Plot: Video game expert Alex Rogan finds himself transported to another planet after conquering The Last Starfighter video game only to find out it was just a test. He was recruited to join the team of best starfighters to defend their world from the attack.
+Actors: Kay E. Kuter, Dan Mason, Lance Guest, Dan O'Herlihy
+
+--------------------------------------------------
+[2019/02/26 01:54:13] spotify-this-song awwwADfaaef
+--------------------------------------------------
+
+--------------------------------------------------
+[2019/02/26 01:54:51] spotify-this-song let it be
+--------------------------------------------------
+Artist: The Beatles
+Song Name: Let It Be - Remastered 2009
+Preview Link: null
+Album: Let It Be (Remastered)
+
+Artists: David Guetta, Ava Max
+Song Name: Let It Be Me (feat. Ava Max)
+Preview Link: https://p.scdn.co/mp3-preview/a821cf43b8b6d1f674cb3e854fc53f4ea00efe14?cid=bb81cd9254364c88b9d581014b43eee9
+Album: 7
+
+Artist: Steve Acho
+Song Name: Let It Be (live Acoustic)
+Preview Link: https://p.scdn.co/mp3-preview/e957b4a6d1ab7af6531471ac08c51ba379b102bc?cid=bb81cd9254364c88b9d581014b43eee9
+Album: Live Classix 2007
+
+Artist: Brett Young
+Song Name: Let It Be Mine
+Preview Link: null
+Album: Ticket To L.A.
+
+Artist: The Beatles
+Song Name: Across The Universe - Remastered 2009
+Preview Link: null
+Album: Let It Be (Remastered)
+
